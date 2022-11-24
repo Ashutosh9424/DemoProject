@@ -1,11 +1,12 @@
 from tkinter import *
 from tkinter import messagebox
+
 import mysql.connector
+from PIL import Image, ImageTk
+
 from adminmainwin import adminstartwin
 # from checkimage import label1
 from usermainwin import userstartwin
-from PIL import ImageTk, Image
-from PIL import Image, ImageTk
 
 
 def adminLogin():
@@ -71,7 +72,7 @@ def userLogin():
 
 
 mw = Tk()
-mw.geometry("800x400")
+mw.geometry("700x400")
 lbname = Label(mw, text="Enter Name     ")
 lbpass = Label(mw, text="Enter Password    ")
 enname = Entry(mw)
@@ -89,8 +90,14 @@ userLoginBtn = Button(text="UserLogin", command=userLogin)
 # adminLoginBtn.grid(row=4, column=0)
 # userLoginBtn.grid(row=4, column=1)
 
-# lbname.place(x=80, y=130)
-# enname.place(x=200,y=130)
+lbname.place(x=300, y=150)
+enname.place(x=400,y=150)
+
+lbpass.place(x=300, y=200)
+enpass.place(x=400, y=200)
+
+adminLoginBtn.place(x=300, y=250)
+userLoginBtn.place(x=450, y=250)
 
 image = Image.open("second.jpg")
 
@@ -100,7 +107,7 @@ resize_image = image.resize((150, 150))
 img = ImageTk.PhotoImage(resize_image)
 
 # create label and add resize image
-Label(image=img).place(x=50, y=50)
+Label(image=img).place(x=80, y=130)
 
 
 mw.mainloop()

@@ -53,13 +53,13 @@ def adminstartwin():
 
     smw.config(menu=menubar)
 
-    image1 = Image.open("pack.jpg")
-    test = ImageTk.PhotoImage(image1)
+    image = Image.open("pack.jpg")
+
+    test = ImageTk.PhotoImage(image)
 
     label1 = Label(image=test)
     label1.image = test
 
-    # Position image
     label1.pack()
 
     smw.mainloop()
